@@ -1,0 +1,55 @@
+h1. PyLucid-FilebrowserGlue-plugin
+
+
+h2. description
+
+Simple glue plugin for using django-filebrowser in PyLucid
+
+
+
+h2. history
+
+* v0.1.0
+** first version
+
+
+
+h2. Backwards-incompatible changes
+
+-
+
+
+
+h2. pip upgrade
+
+To do a pip upgrade in a virtual environment, run this:
+   
+pre. ~$ cd /YourVirtualEnv/bin
+~/YourVirtualEnv/bin$ source activate
+(YourVirtualEnv)~/YourVirtualEnv/bin$ pip install --upgrade --verbose --editable=git+git://github.com/jedie/PyLucid-FilebrowserGlue-plugin.git#egg=PyLucid-FilebrowserGlue-plugin
+
+The example used git readonly clone url. If you use subversion do this:
+
+pre. (YourVirtualEnv)~/YourVirtualEnv/bin$ pip install --upgrade --verbose --editable=http://svn.github.com/jedie/PyLucid-FilebrowserGlue-plugin.git#egg=PyLucid-FilebrowserGlue-plugin
+
+If you have git write access, use this:
+
+pre. (YourVirtualEnv)~/YourVirtualEnv/bin$ pip install --upgrade --verbose --editable=git+git@github.com:jedie/PyLucid-FilebrowserGlue-plugin.git#egg=PyLucid-FilebrowserGlue-plugin
+
+
+
+
+h2. fast repo update
+
+To made a fast repository update, you can run this simple shell script:
+
+pre. ~$ cd /path/to/PyLucid-FilebrowserGlue-plugin
+/path/to/PyLucid-FilebrowserGlue-plugin$ ./update.sh
+
+the update script runs "git pull origin master" or "svn update".
+
+
+
+h2. links
+
+* Homepage/Sourcecode: http://github.com/jedie/PyLucid-FilebrowserGlue-plugin
