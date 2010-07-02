@@ -24,6 +24,19 @@ pre. ~$ mkdir pylucid_plugins
 ~/pylucid_plugins$ git clone git://github.com/jedie/PyLucid-FilebrowserGlue-plugin.git
 ~/pylucid_plugins$ ln -s ~/pylucid_plugins/PyLucid-FilebrowserGlue-plugin/filebrowser_glue ~/PyLucid_env/src/pylucid/pylucid_project/external_plugins/
 
+h3. settings
+
+At least you must add some filebrowser settings into your locale_settings.py!
+
+e.g.:
+
+pre. FILEBROWSER_DIRECTORY = MEDIA_ROOT
+FILEBROWSER_MEDIA_ROOT = MEDIA_ROOT
+FILEBROWSER_MEDIA_URL = MEDIA_URL
+
+See also, available settings: http://code.google.com/p/django-filebrowser/wiki/Settings
+
+
 *Note:* You must restart the django process.
 
 h3. create PluginPage
@@ -40,10 +53,6 @@ the super can access the filebrowser:
  * Django admin site / Auth / Groups / Add
 
 
-h3. settings
-
-You can put every filebrowser settings in your local_settings.py!
-Read, Available Settings: http://code.google.com/p/django-filebrowser/wiki/Settings
 
 h2. fast repo update
 
