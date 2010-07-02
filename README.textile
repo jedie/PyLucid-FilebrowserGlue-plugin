@@ -7,37 +7,42 @@ Simple glue plugin for using django-filebrowser in PyLucid
 
 
 
-h2. history
+h2. install
 
-* v0.1.0
-** first version
+h3. get/install filebrowser
 
-
-
-h2. Backwards-incompatible changes
-
--
+pre. ~$ mkdir pylucid_plugins
+~$ cd pylucid_plugins
+~/pylucid_plugins$ git clone git://github.com/wardi/django-filebrowser-no-grappelli.git
+~/pylucid_plugins$ ln -s ~/pylucid_plugins/django-filebrowser-no-grappelli/filebrowser ~/PyLucid_env/src/pylucid/pylucid_project/external_plugins/
 
 
+h3. get/install glue plugin
 
-h2. pip upgrade
-
-To do a pip upgrade in a virtual environment, run this:
-   
-pre. ~$ cd /YourVirtualEnv/bin
-~/YourVirtualEnv/bin$ source activate
-(YourVirtualEnv)~/YourVirtualEnv/bin$ pip install --upgrade --verbose --editable=git+git://github.com/jedie/PyLucid-FilebrowserGlue-plugin.git#egg=PyLucid-FilebrowserGlue-plugin
-
-The example used git readonly clone url. If you use subversion do this:
-
-pre. (YourVirtualEnv)~/YourVirtualEnv/bin$ pip install --upgrade --verbose --editable=http://svn.github.com/jedie/PyLucid-FilebrowserGlue-plugin.git#egg=PyLucid-FilebrowserGlue-plugin
-
-If you have git write access, use this:
-
-pre. (YourVirtualEnv)~/YourVirtualEnv/bin$ pip install --upgrade --verbose --editable=git+git@github.com:jedie/PyLucid-FilebrowserGlue-plugin.git#egg=PyLucid-FilebrowserGlue-plugin
+pre. ~$ mkdir pylucid_plugins
+~$ cd pylucid_plugins
+~/pylucid_plugins$ git clone git@github.com:jedie/PyLucid-FilebrowserGlue-plugin.git
+~/pylucid_plugins$ ln -s ~/pylucid_plugins/PyLucid-FilebrowserGlue-plugin/filebrowser_glue ~/PyLucid_env/src/pylucid/pylucid_project/external_plugins/
 
 
+h3. create PluginPage
 
+Create a PyLucid PluginPage to hook thre glue plugin, goto:
+
+ * PyLucid admin menu / create content /  new plugin page
+ 
+Use "external_plugins.filebrowser_glue" as app label
+You should limit "PermitViewGroup" under PageTree Permissions!
+e.g.: Create a new user group without adding users in this group. So only
+the super can access the filebrowser:
+
+ * Django admin site / Auth / Groups / Add
+
+
+h3. settings
+
+You can put every filebrowser settings in your local_settings.py!
+Read, Available Settings: http://code.google.com/p/django-filebrowser/wiki/Settings
 
 h2. fast repo update
 
@@ -50,6 +55,25 @@ the update script runs "git pull origin master" or "svn update".
 
 
 
+
+
+h2. history
+
+* v0.1.0
+** first version
+
+
+
+
+h2. Backwards-incompatible changes
+
+-
+
+
+
+
 h2. links
 
-* Homepage/Sourcecode: http://github.com/jedie/PyLucid-FilebrowserGlue-plugin
+* Homepage/Sourcecode pylucid glue plugin: http://github.com/jedie/PyLucid-FilebrowserGlue-plugin
+* used no-grappelli django-filebrowser fork: http://github.com/wardi/django-filebrowser-no-grappelli
+* origin django-filebrowser project page: http://code.google.com/p/django-filebrowser/
